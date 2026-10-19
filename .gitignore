@@ -4,3 +4,4 @@ config-local.bat
 *.log
 .idea/
 .vscode/
+backend/citas.jar

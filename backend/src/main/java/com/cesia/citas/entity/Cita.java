@@ -23,7 +23,7 @@ public class Cita {
     private Cliente cliente;
     @ManyToOne(optional=false) @JoinColumn(name="empleado_id")
     private Empleado empleado;
-    @OneToMany(mappedBy="cita",cascade=CascadeType.ALL,orphanRemoval=true)
+    @OneToMany(mappedBy="cita",fetch=FetchType.EAGER,cascade=CascadeType.ALL,orphanRemoval=true)
     private List<DetalleCita> detalles = new ArrayList<>();
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }

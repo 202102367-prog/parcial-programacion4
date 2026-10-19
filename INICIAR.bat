@@ -18,7 +18,7 @@ if not exist "node-service\node_modules\express" (
 start "Backend Spring Boot" cmd /k call "%~dp0backend\EJECUTAR.bat"
 start "Node Express Axios" cmd /k call "%~dp0node-service\EJECUTAR.bat"
 echo Esperando al backend...
-powershell -NoProfile -Command "$ok=$false; for($i=0;$i -lt 90;$i++){try{Invoke-RestMethod 'http://localhost:8080/api/clientes' -TimeoutSec 2 ^| Out-Null; $ok=$true; break}catch{Start-Sleep -Seconds 2}}; if(-not $ok){Write-Host 'No inicio. Revisa el error en la ventana del backend.'; exit 1}"
+powershell -NoProfile -Command "$ok=$false; for($i=0;$i -lt 90;$i++){try{Invoke-RestMethod 'http://localhost:8080/api/clientes' -TimeoutSec 2 | Out-Null; $ok=$true; break}catch{Start-Sleep -Seconds 2}}; if(-not $ok){Write-Host 'No inicio. Revisa el error en la ventana del backend.'; exit 1}"
 if errorlevel 1 (pause & exit /b 1)
 echo Listo. Ejecuta EVIDENCIAS.bat para probar y tomar capturas.
 pause

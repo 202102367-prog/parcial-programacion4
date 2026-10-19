@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 $api = 'http://localhost:8080'
 function Solicitud($metodo, $ruta, $datos = $null) {
     $p = @{Method=$metodo; Uri="$api$ruta"; UseBasicParsing=$true}
